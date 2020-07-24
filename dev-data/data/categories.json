@@ -1,0 +1,24 @@
+[
+  {
+    "_id": "5f163100fcb175376c5d70a3",
+    "name": "Technology",
+    "slug": "technology"
+  },
+  {
+    "_id": "5f16315efcb175376c5d70a6",
+    "name": "Web design",
+    "slug": "web-design"
+  },
+  { "_id": "5f163188fcb175376c5d70a8", "name": "Science", "slug": "science" },
+  {
+    "_id": "5f1632c4fcb175376c5d70aa",
+    "name": "Online business",
+    "slug": "online-business"
+  },
+  { "_id": "5f1632cffcb175376c5d70ab", "name": "Sci-fi", "slug": "sci-fi" },
+  {
+    "_id": "5f163410f210ac46807c2ea4",
+    "name": "Engineering",
+    "slug": "engineering"
+  }
+]

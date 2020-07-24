@@ -1,0 +1,23 @@
+extends base
+
+include _headLine
+
+block content
+
+    +headLine('Forgot Password', 'Forgot', 'Forgot')
+
+    section#content
+            .container
+                .row
+                    article.single
+                        .span8.login__wrapper
+                            .login__middle
+                                form.forgot-password-form
+                                    .row
+                                        .span8.margintop10
+                                            label(for="email") Email
+                                            input#email(type='email' name='email' autofocus required)
+                                        .span8.margintop10
+                                            p
+                                                button.btn.btn-color.margintop10(type='submit') Send
+                    

@@ -1,0 +1,16 @@
+mixin team(name, post, img)
+    .span3
+        .team-box
+            a.thumbnail(href='#')
+                img(src=`/img/dummies/${img}.jpg` alt='')
+            .roles.aligncenter
+                p.lead
+                    strong= name
+                p= post
+                p
+                    a(href='#')
+                        i.icon-facebook.icon-circled.icon-bglight.active
+                    a(href='#')
+                        i.icon-twitter.icon-circled.icon-bglight.active
+                    a(href='#')
+                        i.icon-linkedin.icon-circled.icon-bglight.active

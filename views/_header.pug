@@ -1,0 +1,67 @@
+header
+    .top
+      .container
+        .row
+          .span6
+            ul.topmenu
+              li
+                a(href='/') Home
+                |  /
+              li
+                a(href='#') Terms
+                |  /
+              li
+                a(href='#') Privacy policy
+          .span6
+            ul.social-network
+              li
+                a(href='#' data-placement='bottom' title='Facebook')
+                  i.icon-circled.icon-bglight.icon-facebook
+              li
+                a(href='#' data-placement='bottom' title='Twitter')
+                  i.icon-circled.icon-bglight.icon-twitter
+              li
+                a(href='#' data-placement='bottom' title='Linkedin')
+                  i.icon-circled.icon-linkedin.icon-bglight
+              li
+                a(href='#' data-placement='bottom' title='Pinterest')
+                  i.icon-circled.icon-pinterest.icon-bglight
+              li
+                a(href='#' data-placement='bottom' title='Google +')
+                  i.icon-circled.icon-google-plus.icon-bglight
+    .container
+      .row.nomargin
+        .span4
+          .logo
+            h1
+              a(href='/')
+                i.icon-tint
+                |  Remember
+        .span8
+          .navbar.navbar-static-top
+            .navigation
+              nav
+                ul.nav.topnav
+                  li(class=`${page === '/' ? 'active' : ''}`)
+                    a(href='/') Home
+                  if user
+                    li(class=`${page === '/blogs/new' ? 'active' : ''}`)
+                      a(href='/blogs/new') Create
+                  li(class=`${page === '/blogs/contact' ? 'active' : ''}`)
+                    a(href='/blogs/contact') Contact 
+                  li(class=`${page === '/about' ? 'active' : ''}`)
+                    a(href='/about') About 
+                  if (user && user.role === 'admin')
+                    li(class=`${page === '/admin/dashboard' ? 'active' : ''}`)
+                      a(href='/admin/dashboard') Dashboard
+                  if user
+                    li
+                      a.logout--btn Logout
+                    li(class=`${page === '/me' ? 'active' : ''}`)
+                      a.user__profile(href='/me')= user.name
+                  else
+                    li(class=`${page === '/login' ? 'active' : ''}`)
+                      a(href='/login') Login
+                    li(class=`${page === '/logout' ? 'active' : ''}`)
+                      a(href='/signup') Sign up  
+                      

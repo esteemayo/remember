@@ -1,0 +1,26 @@
+extends base
+
+include _headLine
+
+block content
+
+    +headLine(`Author's Profile`, 'Author', 'Profile')
+
+    .user__wrapper
+        .container
+            .row
+                .span3
+                    div.user__img--container
+                        img(src=`/img/users/${blog.user.avatar}`, alt=`${blog.user.name}`)
+
+                .span9
+                    .user__info
+                        p FullName: 
+                            span= blog.user.name
+                        p Email: 
+                            span= blog.user.email
+                        p Username: 
+                            span= blog.user.username
+                        p About: 
+                            span= blog.user.about
+

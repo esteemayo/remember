@@ -1,0 +1,13 @@
+extends baseEmail
+
+block content
+    p.contact Subject: 
+        span #{subject}
+    p.contact Name: 
+        span #{name},
+    p.contact Email: 
+        span #{email}
+    p.contact Message: 
+        span #{message}
+
+    

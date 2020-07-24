@@ -1,0 +1,37 @@
+extends base
+
+include _headLine
+
+block content
+
+    +headLine('Admin Dashboard', 'Admin', 'Settings')
+
+    section#content
+        .container
+            .row
+                .span12
+                    table.table.table-striped
+                        thead
+                            tr
+                                th #
+                                th TITLE
+                                th IMAGE
+                                th EDIT
+                                th DELETE
+                        tbody
+                            each blog, i in blogs
+                                tr
+                                    td= `${i + 1}`
+                                    td= blog.title
+                                    td
+                                        img.form__img(src=`/img/blogs/${blog.image}`, alt=`${blog.title}`)
+                                    td
+                                        a.admin__button.btn.btn-small.btn-primary(href=`/admin/blog/edit/${blog._id}`) Edit
+                                    td
+                                        //- With API
+                                        //- button#admin--delete--blog.admin__button.btn.btn-small.btn-danger(data-blog-id=`${blog._id}`) Delete
+                                        //- Without API
+                                        form(action=`/admin/blog/delete/${blog._id}?_method=DELETE` method='POST')
+                                            button.admin__button.btn.btn-small.btn-danger Delete
+
+                                            

@@ -1,0 +1,46 @@
+extends base
+
+include _headLine
+
+block content
+
+    +headLine('Blog', 'Blog', 'Blog')
+                        
+    section#content
+        .container
+            .row
+                .span8
+                    each blog in blogs
+                        article
+                            .row
+                                .span8
+                                    .post-image
+                                        .post-heading
+                                            h3
+                                                a(href=`/blog/${blog.slug}`)= blog.title
+                                        img.blog__img(src=`/img/blogs/${blog.image}` alt=`${blog.title}`)
+                                    .meta-post
+                                        a.author(href='#')
+                                            | By
+                                            br
+                                            =`${blog.user.name.split(' ')[0]}`
+                                        - const date = blog.createdAt;
+                                        a.date(href='#')
+                                            = `${date.toLocaleString('en-us', {day: 'numeric', month: 'long'})}`
+                                            br
+                                            = `${date.toLocaleString('en-us', {year: 'numeric'})}`
+                                    .post-entry
+                                        p= `${blog.content.substring(0, 200)}...`
+                                        a.btn.btn-color(href=`/blog/${blog.slug}`)
+                                            | Read more 
+                                            i.icon-angle-right
+
+
+                    //- #pagination
+                    //-     span.all Page 1 of 3
+                    //-     span.current 1
+                    //-     a.inactive(href='#') 2
+                    //-     a.inactive(href='#') 3
+                .span4
+                    include _aside
+

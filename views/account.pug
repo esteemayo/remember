@@ -1,0 +1,60 @@
+extends base
+
+include _headLine
+
+block content
+
+    +headLine(`Account`, 'User', 'Settings')
+
+    section#content
+        .container
+            .row
+                .span6
+                    h2.heading-secondary.ma-bt-md Your account settings
+                    //- Without API
+                    //- form(action='/submit-user-data' method='POST')
+                    //- API
+                    form.form-user-data
+                        .row
+                            .span5.margintop10
+                                label.form__label(for="name") Name
+                                input#name(type="text", value=`${user.name}`, name='name', required) 
+                            .span5.margintop10
+                                label.form__label(for="email") Email
+                                input#email(type="email", value=`${user.email}`, name="email", required)
+                            .span5.margintop10
+                                label.form__label(for="about") About
+                                textarea#about.user__about(name="about", cols="30", rows="10")= `${user.about}`
+                            .span5.margintop10
+                                label.form__label(for="username") Username
+                                input#username.form__input(type="username", value=`${user.username}`, name="username", required)
+                            .span5.margintop10
+                                .form__group.form__photo-upload
+                                    img.form__user-photo(src=`/img/users/${user.avatar}`, alt='User photo')
+                            .span5.margintop10
+                                input#avatar.form__upload(type="file", accept='image/*', name="avatar")
+                                label(for="avatar") Choose new photo
+                            .span5.margintop10
+                                .form__group
+                                    button.btn.btn-color.margintop10.profile__btn SAVE SETTINGS
+
+                .span6
+                    h2.heading-secondary.ma-bt-md Password change
+                    //- API
+                    form.form-user-password
+                        .row
+                            .span5.margintop10
+                                label.form__label(for="passwordCurrent") Password Current
+                                input#passwordCurrent(type="password", placeholder='********', required, minlength='8' name="passwordCurrent")
+                            .span5.margintop10
+                                label.form__label(for="password") Password
+                                input#password(type="password", placeholder='********', required, minlength='8' name="password")
+                            .span5.margintop10
+                                label.form__label(for="passwordConfirm") Password Confirm
+                                input#passwordConfirm(type="password", placeholder='********', required, minlength='8' name="passwordConfirm")
+                            .line &nbsp;
+                            
+                            .span5.margintop10
+                                .form__group
+                                    button.btn.btn-color.margintop10.btn--save-password.profile__btn SAVE SETTINGS
+

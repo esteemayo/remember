@@ -1,0 +1,18 @@
+mixin headLine(heading, page, active)
+    section#inner-headline
+        .container
+            .row
+                .span4
+                    .inner-heading
+                        h2.heading-secondary= heading
+                .span8
+                    ul.breadcrumb
+                        li
+                            a(href='/') Home
+                            i.icon-angle-right
+                        li
+                            a(href='#')= page
+                            i.icon-angle-right
+                        li.active= active
+
+                        

@@ -1,0 +1,27 @@
+extends base
+
+include _headLine
+
+block content
+
+    +headLine('Forgot Password', 'Forgot', 'Forgot')
+
+    section#content
+            .container
+                .row
+                    article.single
+                        .span8.login__wrapper
+                            .login__middle
+                                form.reset-password-form(action=`/reset/${token}` method='POST')
+                                    .row
+                                        .span8.margintop10
+                                            label(for="password") Password
+                                            input#password(type='password' name='password' autofocus required)
+                                        .span8.margintop10
+                                            label(for="passwordConfirm") PasswordConfirm
+                                            input#passwordConfirm(type='password' name='passwordConfirm' required)
+                                        .span8.margintop10
+                                            p
+                                                button.btn.btn-color.margintop10(type='submit') Reset Password
+
+                    

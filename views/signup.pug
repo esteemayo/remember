@@ -1,0 +1,45 @@
+extends base
+
+include _headLine
+
+block content
+
+    +headLine('Sign up', 'Signup', 'Signup')
+
+    section#content
+            .container
+                .row
+                    article.single
+                        .span8.login__wrapper
+                            .login__middle
+
+                                //- form#signupform(action='#' method='post')
+                                form#signupform
+                                    .row
+                                        .span8.margintop10
+                                            label(for="name") Name
+                                            input#name(type='text' name='name' required autofocus)
+                                        .span8.margintop10
+                                            label(for="email") Email
+                                            input#email(type='email' name='email' placeholder='* user@example.com' required)
+                                        .span8.margintop10
+                                            label(for="username") Username
+                                            input#username(type='text' name='username' required)
+                                        .span8.margintop10
+                                            label(for="password") Password
+                                            input#password(type='password' name='password' placeholder='********' minlength='8' required)
+                                        .span8.margintop10
+                                            label(for="passwordConfirm") Confirm Password
+                                            input#passwordConfirm(type='password' name='passwordConfirm' placeholder='********' minlength='8' required)
+                                        .span8.margintop10
+                                            p
+                                                textarea#about.input-block-level(name='about' rows='12' required)
+                                        .span8.margintop10
+                                            label(for="avatar") Avatar
+                                            input#avatar(type='file' name='avatar' accept='image/*')
+                                        .span8.margintop10
+                                            p
+                                                button.btn.btn-color.margintop10(type='submit') Sign Up
+
+
+                                                

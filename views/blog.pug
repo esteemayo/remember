@@ -1,0 +1,88 @@
+extends base
+
+include _headLine
+
+block content
+
+    +headLine('Blog Post', 'Blog', 'Blog post')
+    
+    section#content
+        .container
+            .row
+                .span8
+                    article.single
+                        .row
+                            .span8
+                                .post-image
+                                    .post-heading
+                                        h3= blog.title
+                                    img.blog__img(src=`/img/blogs/${blog.image}` alt=`${blog.title}`)
+                                .meta-post
+                                    a.author(href='#')
+                                        | By
+                                        br
+                                        = `${blog.user.name.split(' ')[0]}`
+                                    - const date = blog.createdAt
+                                    a.date(href='#')
+                                        = `${date.toLocaleString('en-us', {day: 'numeric', month: 'long'})}`
+                                        br
+                                        = `${date.toLocaleString('en-us', {year: 'numeric'})}`
+                                - const paragraphs = blog.content.split('\n');
+                                each paragraph in paragraphs
+                                    p= paragraph
+                                blockquote= blog.description
+                                p= blog.subContent
+                                
+                                div
+                                    ul.meta-bottom
+                                        li
+                                            i.icon-tags
+                                            a(href=`/blogs/${blog.categorySlug}`)= blog.category
+                
+                    h4 About The Author
+                    .about-author
+                        a.thumbnail.align-left(href=`/blog/${blog.slug}/user`)
+                            img(style='width: 128px; height: 128px;' src=`/img/users/${blog.user.avatar}` alt=`${blog.user.username}`)
+                        h5
+                            strong
+                            a(href=`/blog/${blog.slug}/user`)= blog.user.name
+                        - const about = blog.user.about.split('\n');
+                        each abt in about
+                            p=abt
+                    .comment-area
+                        h5= `Comments(${blog.comments.length})`
+                        each comment in blog.comments
+                            .media
+                                a.thumbnail.pull-left(href=`/blog/comment/${comment._id}/user`)
+                                    img(src=`/img/users/${comment.user.avatar}` alt=`${comment.user.username}`)
+                                .media-body
+                                    .media-content
+                                        h6
+                                            - const date = `${comment.createdAt.toLocaleString('en-us', {month: 'long', day: 'numeric', year: 'numeric'})}`
+                                            span= date
+                                            | 
+                                            = `${comment.user.username}`
+                                        p= comment.comment
+
+                        .marginbot30
+                        h6 Leave your comment
+
+                        if (!user)
+                            p
+                                | Please 
+                                a(href="/login") log in 
+                                | to leave a comment
+                        else
+                            //- With API
+                            //- form#commentform
+                            form(action=`/blog/${blog.id}/comments` method='POST')
+                                .row
+                                    .span8.margintop10
+                                        p
+                                            textarea#comment.input-block-level(name='comment' rows='12' placeholder='*Your comment here')
+                                        p
+                                            //- button.btn.btn-color.margintop10(type='submit' data-user-id=`${user._id}` data-blog-id=`${blog._id}`) Submit comment
+                                            button.btn.btn-color.margintop10(type='submit') Submit comment
+
+                .span4
+                    include _aside

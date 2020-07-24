@@ -1,0 +1,62 @@
+doctype html
+head
+  meta(charset='utf-8')
+  title Remember - #{title}
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  meta(name='description' content='Your page description here')
+  meta(name='author' content='')
+  //- css
+  link(rel="stylesheet", href="/css/custom.css")
+  link(href='/css/bootstrap.css' rel='stylesheet')
+  link(href='/css/bootstrap-responsive.css' rel='stylesheet')
+  link(href='/css/prettyPhoto.css' rel='stylesheet')
+  link(href='/https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700' rel='stylesheet')
+  link(href='/css/style.css' rel='stylesheet')
+  //- Theme skin
+  link#t-colors(href='/color/default.css' rel='stylesheet')
+  //- Fav and touch icons
+  link(rel='apple-touch-icon-precomposed' sizes='144x144' href='/ico/apple-touch-icon-144-precomposed.png')
+  link(rel='apple-touch-icon-precomposed' sizes='114x114' href='/ico/apple-touch-icon-114-precomposed.png')
+  link(rel='apple-touch-icon-precomposed' sizes='72x72' href='/ico/apple-touch-icon-72-precomposed.png')
+  link(rel='apple-touch-icon-precomposed' href='/ico/apple-touch-icon-57-precomposed.png')
+  link(rel='shortcut icon' href='/ico/favicon.png')
+//-   
+    =======================================================
+    Theme Name: Remember
+    Theme URL: https://bootstrapmade.com/remember-free-multipurpose-bootstrap-template/
+    Author: BootstrapMade.com
+    Author URL: https://bootstrapmade.com
+    =======================================================
+#wrapper
+  //- Header
+  include _header
+
+  //- Content
+  block content
+  
+  include _footer
+a.scrollup(href='#')
+  i.icon-angle-up.icon-rounded.icon-bglight.icon-2x
+//- 
+  javascript
+  ==================================================
+//- Placed at the end of the document so the pages load faster
+script(src='https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js')
+//- script(src='/javascript/bundle.js')
+script(src='/js/jquery.js')
+script(src='/js/jquery.easing.1.3.js')
+script(src='/js/bootstrap.js')
+script(src='/js/modernizr.custom.js')
+script(src='/js/toucheffects.js')
+script(src='/js/google-code-prettify/prettify.js')
+script(src='/js/jquery.prettyPhoto.js')
+script(src='/js/portfolio/jquery.quicksand.js')
+script(src='/js/portfolio/setting.js')
+script(src='/js/animate.js')
+//- Template Custom JavaScript File
+script(src='/js/custom.js')
+script(src='/javascript/authService.js')
+script(src='/javascript/userService.js')
+script(src='/javascript/updateService.js')
+script(src='/javascript/blogService.js')
+//- script(src='/javascript/commentService.js')

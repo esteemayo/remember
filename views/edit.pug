@@ -1,0 +1,49 @@
+extends base
+
+include _headLine
+
+block content
+
+    +headLine('Edit blog post', 'Blog Post', 'Edit')
+
+    section#content
+            .container
+                .row
+                    article.single
+                        .span8.login__wrapper
+                            .login__middle
+
+                                //- API
+                                //- form.edit--blog--form
+                                //- Without API
+                                form(action=`/admin/blog/edit/${blog._id}?_method=PUT` method='POST')
+                                    .row
+                                        .span8.margintop10
+                                            label(for="title") Title
+                                            input#title(type='text' name='title' value=`${blog.title}`)
+                                        .span8.margintop10
+                                            label(for="category") Category
+                                            select#category.select__input(name="category")
+                                                each category in categories
+                                                    option(value=`${category._id}`)= category.name
+                                        .span8.margintop10
+                                            label(for="description") Description
+                                            input#description(type='text' name='description' value=`${blog.description}`)
+                                        .span8.margintop10
+                                            label(for="subContent") Sub-Content
+                                            input#subContent(type='text' name='subContent' value=`${blog.subContent}`)
+                                        .span8.margintop10
+                                            p
+                                                label(for="content") Content
+                                                textarea#Content.input-block-level(style='height: 100px;' name='content' rows='12')=`${blog.content}`
+                                        .span8.margintop10
+                                            label(for="image") Image
+                                            input#image(type='file' name='image' accept='image/*')
+                                        .span8.margintop10
+                                            img.form__img(src=`/img/blogs/${blog.image}`, alt=`${blog.title}`)
+                                        .span8.margintop10
+                                            p
+                                                //- input#blogId(type="hidden", name="_id" value=`${blog._id}`)
+                                                button.btn.btn-color.margintop10(type='submit') Edit
+
+                                                

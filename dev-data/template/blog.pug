@@ -1,0 +1,192 @@
+extends base
+
+block content
+
+    section#inner-headline
+        .container
+            .row
+                .span4
+                    .inner-heading
+                        h2 Post
+                .span8
+                    ul.breadcrumb
+                        li
+                            a(href='index.html') Home
+                            i.icon-angle-right
+                        li
+                            a(href='#') Blog
+                            i.icon-angle-right
+                        li.active Blog post 
+    section#content
+        .container
+            .row
+                .span8
+                    article.single
+                        .row
+                            .span8
+                                .post-image
+                                    .post-heading
+                                        h3
+                                            a(href='#') Example single post title here
+                                    img(src='/img/dummies/blog/img1.jpg' alt='')
+                                .meta-post
+                                    a.author(href='#')
+                                        | By
+                                        br
+                                        |  Admin
+                                    a.date(href='#')
+                                        | 10 Jun
+                                        br
+                                        |  2013
+                                p
+                                    | Qui ut ceteros comprehensam. Cu eos sale sanctus eligendi, id ius elitr saperet, ocurreret pertinacia pri an. No mei nibh consectetuer, semper laoreet perfecto ad qui, est rebum nulla argumentum ei. Fierent adipisci iracundia est ei, usu timeam persius
+                                    | ea. Usu ea justo malis, pri quando everti electram ei, ex homero omittam salutatus sed. Dicam appetere ne qui, no has scripta appellantur. Mazim alienum appellantur eu cum, cu ullum officiis pro, pri at eius erat accusamus. Eos id
+                                    | hinc fierent indoctum, ad accusam consetetur voluptatibus sit. His at quod impedit. Eu zril quando perfecto mel, sed eu eros debet.
+                                blockquote
+                                    | Lorem ipsum dolor sit amet, ei quod constituto qui. Summo labores expetendis ad quo, lorem luptatum et vis. No qui vidisse signiferumque...
+                                p
+                                    | Fierent adipisci iracundia est ei, usu timeam persius ea. Usu ea justo malis, pri quando everti electram ei, ex homero omittam salutatus sed. Dicam appetere ne qui, no has scripta appellantur. Mazim alienum appellantur eu cum, cu ullum officiis pro, pri
+                                    | at eius erat accusamus.
+                                div
+                                    ul.meta-bottom
+                                        li
+                                            i.icon-folder-open
+                                            a(href='#')  Blog
+                                        li
+                                            i.icon-tags
+                                            a(href='#') Web design
+                                            | , 
+                                            a(href='#') Tutorial
+                
+                    .about-author
+                        a.thumbnail.align-left(href='#')
+                            img(src='/img/avatar.png' alt='')
+                        h5
+                            strong
+                            a(href='#') John doe
+                        p
+                            | Qui ut ceteros comprehensam. Cu eos sale sanctus eligendi, id ius elitr saperet, ocurreret pertinacia pri an. No mei nibh consectetuer, semper ad qui, est rebum nulla argumentum ei.
+                    .comment-area
+                        h4 4 Comments
+                        .media
+                            a.thumbnail.pull-left(href='#')
+                                img(src='/img/avatar.png' alt='')
+                            .media-body
+                                .media-content
+                                    h6
+                                        span March 12, 2013
+                                        |  Karen medisson
+                                    p
+                                    | Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+                                    a.align-right(href='#') Reply
+                        .media
+                            a.thumbnail.pull-left(href='#')
+                                img(src='/img/avatar.png' alt='')
+                            .media-body
+                                .media-content
+                                    h6
+                                        span March 12, 2013
+                                        |  Smith sanderson
+                                    p
+                                    | Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+                                    a.align-right(href='#') Reply
+                                .media
+                                    a.thumbnail.pull-left(href='#')
+                                        img(src='/img/avatar.png' alt='')
+                                    .media-body
+                                        .media-content
+                                            h6
+                                                span March 12, 2013
+                                                |  Thomas guttenberg
+                                            p
+                                            | Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+                                            a.align-right(href='#') Reply
+                        .media
+                            a.thumbnail.pull-left(href='#')
+                                img(src='/img/avatar.png' alt='')
+                            .media-body
+                                .media-content
+                                    h6
+                                        span March 12, 2013
+                                        |  Vicky lumora
+                                    p
+                                    | Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+                                    a.align-right(href='#') Reply
+                        .marginbot30
+                        h4 Leave your comment
+
+                        form#commentform(action='#' method='post' name='comment-form')
+                            .row
+                                .span4
+                                    input(type='text' placeholder='* Enter your full name')
+                                .span4
+                                    input(type='text' placeholder='* Enter your email address')
+                                .span8.margintop10
+                                    input(type='text' placeholder='Enter your website')
+                                .span8.margintop10
+                                    p
+                                        textarea.input-block-level(rows='12' placeholder='*Your comment here')
+                                    p
+                                        button.btn.btn-color.margintop10(type='submit') Submit comment
+                .span4
+                    aside.right-sidebar
+                        .widget
+                            form
+                                .input-append
+                                    input#appendedInputButton.span2(type='search' name='search' placeholder='Type here')
+                                    button.btn.btn-color(type='submit') Search
+                        .widget
+                            h5.widgetheading Categories
+                            ul.cat
+                                li
+                                    i.icon-angle-right
+                                    a(href='#') Web design
+                                    span  (20)
+                                li
+                                    i.icon-angle-right
+                                    a(href='#') Online business
+                                    span  (11)
+                                li
+                                    i.icon-angle-right
+                                    a(href='#') Marketing strategy
+                                    span  (9)
+                                li
+                                    i.icon-angle-right
+                                    a(href='#') Technology
+                                    span  (12)
+                                li
+                                    i.icon-angle-right
+                                    a(href='#') About finance
+                                    span  (18)
+                        .widget
+                            h5.widgetheading Recent posts
+                            ul.cat
+                                li
+                                    i.icon-angle-right
+                                    a(href='#') Lorem ipsum dolor sit amet
+                                li
+                                    i.icon-angle-right
+                                    a(href='#') Ancillae senserit scribentur ea vel
+                                li
+                                    i.icon-angle-right
+                                    a(href='#') Persius nostrum eleifend ad has
+                                li
+                                    i.icon-angle-right
+                                    a(href='#') Facilis mediocrem urbanitas ad sed
+                                li
+                                    i.icon-angle-right
+                                    a(href='#') Eripuit veritus docendi cum ut
+                        .widget
+                            h5.widgetheading Video widget
+                            .video-container
+                                iframe(src='http://player.vimeo.com/video/30585464?title=0&byline=0') &#x9;&#x9;&#x9;
+                        .widget
+                            h5.widgetheading Flickr photostream
+                            .flickr_badge
+                                script(type='text/javascript' src='http://www.flickr.com/badge_code_v2.gne?count=8&display=random&size=s&layout=x&source=user&user=34178660@N03')
+                            .clear
+                        .widget
+                            h5.widgetheading Text widget
+                            p
+                            | Lorem ipsum dolor sit amet, quo everti torquatos rationibus an, graeci splendide mel cu. Sed ad vidisse eruditi maluisset, et duo mazim placerat adipiscing.
+

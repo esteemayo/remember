@@ -1,0 +1,14 @@
+extends baseEmail
+
+block content
+    p Dear #{fullName},
+    h4 #{subject}
+    - const date = new Date(Date.now());
+    p Please be informed that your remember.io account was accessed at #{date.toString()}
+    p If you did not log on to your REMEMBER account at the time detailed above, please call  REMEMBERCONNECT; our 24 hour interactive contact on: (123) 456-7890 - (123) 555-7891 or send an email to 
+        a(href="mailto:support@remember.io") support@remember.io 
+        |  immediately.
+    
+    p Thank you for trusting us.
+    p - Remember Inc
+

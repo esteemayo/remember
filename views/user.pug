@@ -1,0 +1,27 @@
+extends base
+
+include _headLine
+
+block content
+
+    +headLine(`User's Profile`, 'User', 'Profile')
+
+    .comment__user--wrapper
+        .container
+            .row
+                .span3
+                    div.user__img--container
+                        img(src=`/img/users/${comment.user.avatar}`, alt=`${comment.user.name}`)
+
+                .span9
+                    .user__info
+                        p FullName: 
+                            span= comment.user.name
+                        p Email: 
+                            span= comment.user.email
+                        p Username: 
+                            span= comment.user.username
+                        p About: 
+                            span= comment.user.about
+
+                            

@@ -1,0 +1,35 @@
+extends base
+
+include _headLine
+
+block content
+
+    +headLine('Login', 'Login', 'Login')
+
+    section#content
+            .container
+                .row
+                    article.single
+                        .span8.login__wrapper
+                            .login__middle
+
+                                //- Rendered Website(Without API)
+                                //- form#loginform(action='#' method='post')
+                                //- API
+                                form#loginform
+                                    .row
+                                        .span8.margintop10
+                                            label(for="username") Username
+                                            input#username(type='text' name='username' autofocus required)
+                                        .span8.margintop10
+                                            label(for="password") Password
+                                            input#password(type='password' name='password' placeholder='********' minlength='8' required)
+                                        .span8.margintop10
+                                            p
+                                                button.btn.btn-color.margintop10(type='submit') Login
+                                        .span8.margintop10
+                                            p
+                                                a(href="/forgot") Forgot password?
+
+                    
+                    

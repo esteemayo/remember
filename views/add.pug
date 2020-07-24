@@ -1,0 +1,44 @@
+extends base
+
+include _headLine
+
+block content
+
+    +headLine('Create blog post', 'Blog Post', 'Add')
+
+    section#content
+            .container
+                .row
+                    article.single
+                        .span8.login__wrapper
+                            .login__middle
+
+                                //- Without API
+                                //- form#signupform(action='#' method='post')
+                                //- API
+                                form#addNewBlogform
+                                    .row
+                                        .span8.margintop10.form-group
+                                            label(for="title") Title
+                                            input#title(type='text' name='title')
+                                        .span8.margintop10.form-group
+                                            label(for="category") Category
+                                            select#category.select__input(name="category")
+                                                each category in categories
+                                                    option(value=`${category._id}`)= category.name
+                                        .span8.margintop10.form-group
+                                            label(for="description") Description
+                                            input#description(type='text' name='description')
+                                        .span8.margintop10.form-group
+                                            label(for="subContent") Sub-Content
+                                            input#subContent(type='text' name='subContent')
+                                        .span8.margintop10.form-group
+                                            p
+                                                label(for="content") Content
+                                                textarea#Content.input-block-level(style='height: 100px;' name='content' rows='12')
+                                        .span8.margintop10.form-group
+                                            label(for="image") Image
+                                            input#image(type='file' name='image' accept='image/*')
+                                        .span8.margintop10.form-group
+                                            p
+                                                button.btn.btn-color.margintop10(type='submit') Create new post
