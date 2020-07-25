@@ -117,6 +117,7 @@ app.use((req, res, next) => {
     next();
 });
 
+// Routes
 app.use('/', viewRouter);
 app.use('/api/v1/blogs', blogRouter);
 app.use('/api/v1/users', userRouter);
