@@ -90,7 +90,7 @@ exports.getBlog = catchAsync(async (req, res, next) => {
     });
 
     if (!blog) {
-        return next(new AppError('No blog found with the given SLUG', 404));
+        return next(new AppError('There is no blog with that name', 404));
     }
 
     res.status(200).render('blog', {
@@ -232,7 +232,7 @@ exports.userProfile = catchAsync(async (req, res, next) => {
     const blog = await Blog.findOne({ slug: req.params.slug });
 
     if (!blog) {
-        return next(new AppError('No blog found with the given SLUG', 404));
+        return next(new AppError('There is no blog with that name', 404));
     }
 
     res.status(200).render('profile', {
@@ -328,4 +328,3 @@ exports.getForgotPassword = (req, res) => {
 function escapeRegex(text) {
     return text.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&");
 };
-
