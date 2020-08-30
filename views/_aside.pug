@@ -10,7 +10,7 @@ aside.right-sidebar
         ul.cat
             each category in categories
                 li
-                    i.icon-angle-right
+                    i.icon-angle-right 
                     a(href=`/blogs/${category.slug}`)= category.name
             
     .widget
@@ -18,7 +18,7 @@ aside.right-sidebar
         ul.cat
             each blog in recentPosts
                 li
-                    i.icon-angle-right
+                    i.icon-angle-right 
                     a(href=`/blog/${blog.slug}`)= blog.title
             
     .widget
@@ -34,4 +34,3 @@ aside.right-sidebar
         h5.widgetheading Text widget
         p
         | Lorem ipsum dolor sit amet, quo everti torquatos rationibus an, graeci splendide mel cu. Sed ad vidisse eruditi maluisset, et duo mazim placerat adipiscing.
-        

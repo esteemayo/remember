@@ -47,8 +47,9 @@ footer
         .row
           .span6
             .copyright
+            - const date = new Date();
               p
-                span &copy; Remember Inc. All right reserved
+                span &copy; Copyright #{date.getFullYear()} Remember Inc. All right reserved
           .span6
             .credits
               | Created by 

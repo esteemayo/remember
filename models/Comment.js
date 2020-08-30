@@ -18,13 +18,15 @@ const commentSchema = new mongoose.Schema({
     },
     createdAt: {
         type: Date,
-        default: Date.now()
+        default: Date.now(),
+        select: false
     }
 }, {
     toJSON: { virtuals: true },
     toObject: { virtuals: true }
 });
 
+// Preventing duplicate comment
 commentSchema.index({ blog: 1, user: 1 }, { unique: true });
 
 commentSchema.pre(/^find/, function (next) {
@@ -47,4 +49,3 @@ commentSchema.pre(/^find/, function (next) {
 const Comment = mongoose.model('Comment', commentSchema);
 
 module.exports = Comment;
-

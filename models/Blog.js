@@ -25,14 +25,21 @@ const blogSchema = new mongoose.Schema({
         required: [true, 'A blog post description must be specified'],
         trim: true
     },
-    slug: String,
+    slug: {
+        type: String,
+        unique: true,
+        lowercase: true
+    },
     image: String,
     imageId: String,
     category: {
         type: String,
         required: [true, 'A blog must belong to a category']
     },
-    categorySlug: String,
+    categorySlug: {
+        type: String,
+        lowercase: true
+    },
     user: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User',
@@ -40,7 +47,8 @@ const blogSchema = new mongoose.Schema({
     },
     createdAt: {
         type: Date,
-        default: Date.now()
+        default: Date.now(),
+        select: false
     }
 }, {
     toJSON: { virtuals: true },

@@ -65,7 +65,7 @@ class Email {
     }
 
     async SendLoginMessage() {
-        await this.send('loginMessage', 'Remember log in confirmation')
+        await this.send('loginMessage', 'Remember log in confirmation');
     }
 };
 

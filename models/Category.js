@@ -10,7 +10,16 @@ const categorySchema = new mongoose.Schema({
         minlength: [3, 'A category name must have more or equal than 3 characters'],
         trim: true
     },
-    slug: String
+    slug: {
+        type: String,
+        unique: true,
+        lowercase: true
+    },
+    createdAt: {
+        type: Date,
+        default: Date.now(),
+        select: false
+    }
 }, {
     toJSON: { virtuals: true },
     toObject: { virtuals: true }

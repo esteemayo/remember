@@ -18,7 +18,7 @@ const userSchema = new mongoose.Schema({
     username: {
         type: String,
         required: [true, 'Please tell us your username'],
-        unique: [true, 'Username name already exist. Please choose another!']
+        unique: [true, 'Username already exist. Please choose another!']
     },
     avatar: {
         type: String,
@@ -48,7 +48,7 @@ const userSchema = new mongoose.Schema({
             validator: function (el) {
                 return el === this.password;
             },
-            message: 'Passwords are not same'
+            message: 'Passwords are not the same'
         }
     },
     passwordChangedAt: Date,
@@ -61,15 +61,19 @@ const userSchema = new mongoose.Schema({
     },
     createdAt: {
         type: Date,
-        default: Date.now()
+        default: Date.now(),
+        select: false
     }
 });
 
 userSchema.pre('save', async function (next) {
+    // Only run this function if password was actually modified
     if (!this.isModified('password')) return next();
 
+    // Hash the password with cost of 12
     this.password = await bcrypt.hash(this.password, 12);
 
+    // Delete passwordConfirm field
     this.passwordConfirm = undefined;
 
     next();
